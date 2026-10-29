@@ -1,0 +1,13 @@
+{
+  "name": "@craftlens/test-fixtures",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@craftlens/analysis": "0.1.0",
+    "@craftlens/contracts": "0.1.0",
+    "@craftlens/core": "0.1.0",
+    "@craftlens/hook-bridge": "0.1.0",
+    "@craftlens/security": "0.1.0"
+  }
+}

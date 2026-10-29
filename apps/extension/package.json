@@ -1,0 +1,79 @@
+{
+  "name": "craftlens",
+  "displayName": "CraftLens",
+  "description": "Evidence-backed engineering companion for AI-assisted coding. Local-first, with an optional bring-your-own-model provider.",
+  "version": "0.1.0",
+  "publisher": "craftlens",
+  "private": true,
+  "license": "UNLICENSED",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": ["onView:craftlens.panel"],
+  "main": "./dist/extension.js",
+  "scripts": {
+    "build": "node src/build.mjs",
+    "package": "vsce package --out ../../craftlens.vsix --no-dependencies"
+  },
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "craftlens",
+          "title": "CraftLens",
+          "icon": "media/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "craftlens": [
+        {
+          "type": "webview",
+          "id": "craftlens.panel",
+          "name": "CraftLens",
+          "contextualTitle": "CraftLens"
+        }
+      ]
+    },
+    "commands": [
+      { "command": "craftlens.focusPanel", "title": "CraftLens: Focus panel" },
+      { "command": "craftlens.explainSelection", "title": "CraftLens: Explain selection" },
+      { "command": "craftlens.verifySelection", "title": "CraftLens: What should I verify?" },
+      { "command": "craftlens.reanalyze", "title": "CraftLens: Re-analyze task" },
+      { "command": "craftlens.toggleQuiet", "title": "CraftLens: Toggle quiet mode" },
+      { "command": "craftlens.loadSynthetic", "title": "CraftLens: Load synthetic task" },
+      { "command": "craftlens.clearLocalData", "title": "CraftLens: Clear local data" },
+      { "command": "craftlens.installHooks", "title": "CraftLens: Install hooks" },
+      { "command": "craftlens.uninstallHooks", "title": "CraftLens: Uninstall hooks" }
+    ],
+    "configuration": {
+      "title": "CraftLens",
+      "properties": {
+        "craftlens.profile": {
+          "type": "string",
+          "default": "learn",
+          "enum": ["learn", "senior-reviewer", "architect", "reliability-security", "performance-cost", "minimal-noise", "custom"],
+          "description": "Engineering profile. Workspace settings cannot change privacy."
+        },
+        "craftlens.privacyMode": {
+          "type": "string",
+          "default": "prompt-summary",
+          "enum": ["local-only", "prompt-summary", "diff-snippets", "workspace-context"],
+          "scope": "window",
+          "description": "What may be sent to FreeLLMAPI on this computer. CraftLens has no account and no paid plan."
+        }
+      }
+    }
+  },
+  "dependencies": {
+    "@craftlens/analysis": "0.1.0",
+    "@craftlens/context": "0.1.0",
+    "@craftlens/contracts": "0.1.0",
+    "@craftlens/core": "0.1.0",
+    "@craftlens/hook-bridge": "0.1.0",
+    "@craftlens/providers": "0.1.0",
+    "@craftlens/security": "0.1.0",
+    "@craftlens/storage": "0.1.0"
+  }
+}

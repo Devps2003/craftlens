@@ -1,0 +1,11 @@
+{
+  "name": "@craftlens/hook-bridge",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": { ".": "./src/index.ts" },
+  "dependencies": {
+    "@craftlens/contracts": "0.1.0",
+    "@craftlens/security": "0.1.0"
+  }
+}

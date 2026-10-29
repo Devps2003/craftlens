@@ -1,0 +1,12 @@
+{
+  "name": "@craftlens/analysis",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": { ".": "./src/index.ts" },
+  "dependencies": {
+    "@craftlens/contracts": "0.1.0",
+    "@craftlens/knowledge": "0.1.0",
+    "@craftlens/providers": "0.1.0"
+  }
+}

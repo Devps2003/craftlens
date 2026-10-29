@@ -1,0 +1,15 @@
+node_modules/
+dist/
+coverage/
+*.vsix
+*.log
+.DS_Store
+.craftlens/
+apps/extension/media/panel.js
+apps/extension/media/panel.css
+apps/extension/media/panel.js.map
+.vscode-test/
+*.tsbuildinfo
+.env
+.env.*
+!.env.example
